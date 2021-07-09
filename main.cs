@@ -1,37 +1,41 @@
 using System;
 
 class MainClass {
-
-
- 
-    
-    
+  
   
   
   public static void Main (string[] args) {
     
     
-  CalculateCharges(Console.WriteLine(charge));
-   
     
-       
+    
+    
+   Console.WriteLine("How many customers parked in garage ?");
+   var total = 0;
+   int customerCount = 0;
+  int numOfPeople = Convert.ToInt32(Console.ReadLine());
+  Console.WriteLine("Is there any more people ? yes or no");
+   var answer = Console.ReadLine();
+   
+     if(answer == "yes")
+  {
+    Console.WriteLine("How many more people ? ");
+    int numOfPeople2 = Convert.ToInt32(Console.ReadLine());
+    total = numOfPeople2 + numOfPeople;
   }
-  public static void CalculateCharges(){
-    double charge = 0;
-    Console.WriteLine("How many customers parking ?");
-    int numParking = Convert.ToInt32(Console.ReadLine());
-     Console.WriteLine("Enter customer hours");
-    Console.WriteLine("Customer hours (1-" + numParking + ") inputs ");
-    for(int customers =0; customers<numParking; customers++)
-    {
-    
-      int hours = Convert.ToInt32(Console.ReadLine());
-    charge = 2 + (hours-3) * 0.05;
-   
-    }
-    
+   CalculateCharges();
     
   }
-}
+  public static double CalculateCharges()
+  {
+    double charges = 0;
+    Console.WriteLine("Enter hrs of each customer");
+    double hours = Convert.ToDouble(Console.ReadLine());
+    charges = 2 + (hours - 3)*0.05;
+    return charges;
+    
+  }
+
+   
   
-  
+ }
