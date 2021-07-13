@@ -26,16 +26,20 @@ public static void Customers()
      Console.WriteLine("Total amount of customers is " + totalCustomers);
    }
    Console.WriteLine("How many hours did each customer parked for ? "); 
+   double chargeForCustomer =0.0;
+   double totalCharges = 0.0;
  for(int i= 0; i<totalCustomers; i++)
  {
   
- CalculateCharges();
+ chargeForCustomer =CalculateCharges();
+totalCharges = totalCharges + chargeForCustomer;
 
  }
+ Console.WriteLine("Total charges for customers are $" + totalCharges );
 }
 public static double CalculateCharges()
 {
-double totalCharges = 0;
+double totalCharges = 0.0;
  double hrs = Convert.ToDouble(Console.ReadLine());
 
 double charges = 2 + (hrs - 3)*0.5;
@@ -52,7 +56,7 @@ if (hrs > 24)
 
  Console.WriteLine("Customer charge is \n $"  + charges);
 
-Console.WriteLine("total of customer charges is ");
+
 
   return charges;
   
